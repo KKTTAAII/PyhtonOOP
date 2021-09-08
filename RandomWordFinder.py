@@ -22,14 +22,12 @@ class RandomWordFinder(WordFinder):
     """
     def __init__(self, file):
         super().__init__(file)
-        self.open_file = open(self.file, 'r')
-        self.list = self.open_file.readlines()
         self.words = self.get_list()
         self.num_of_words = len(self.words)
    
     def get_list(self):
         """remove blank lines and lines that are comment"""
-        list = [line.strip() for line in self.list]
+        list = [line.strip() for line in self.words]
         list_to_remove = [
             item for item in list 
             if item == '' or item.startswith('#')

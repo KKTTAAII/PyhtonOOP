@@ -22,7 +22,6 @@ class WordFinder:
         self.words = self.open_file.readlines()
         self.num_of_words = len(self.words)
         print(f'{self.num_of_words} words read')
-
         self.open_file.close()
         
     
